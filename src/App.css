@@ -1,0 +1,469 @@
+/* Popover 容器 */
+.popover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* 顶部三角形 */
+.apex-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.apex {
+  height: 8px;
+  position: relative;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.apex-inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 10.36%;
+}
+
+.apex-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 主内容区域 */
+.main-content {
+  background: white;
+  height: 644px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  width: 368px;
+  flex-shrink: 0;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* 背景装饰 */
+.background-decoration {
+  position: absolute;
+  height: 122px;
+  right: -14px;
+  top: 0;
+  width: 127px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decoration-inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: -11.02%;
+  top: 0;
+}
+
+.decoration-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 可滚动内容区域 */
+.scrollable-content {
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  bottom: 20px;
+  right: 2px;
+  padding-right: 18px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  
+  /* 现代浏览器：优先使用标准属性 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  
+  /* 尝试使用 scrollbar-gutter 预留空间（实验性） */
+  /* scrollbar-gutter: stable; */
+}
+
+/* Webkit 滚动条样式（Chrome, Safari, Edge） */
+.scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* 标题区域 */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 328px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.subtitle-wrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+
+.subtitle {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.arrow-icon {
+  height: 14px;
+  position: relative;
+  width: 7px;
+  flex-shrink: 0;
+}
+
+.arrow-inner {
+  position: absolute;
+  inset: 23% 20.1% 22.96% 20.45%;
+}
+
+.arrow-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 内容区域 */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  width: 328px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 已结束活动卡片 */
+.ended-section {
+  background: white;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 24px 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ended-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ended-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ended-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ended-title-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+
+.ended-title {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.9);
+  flex-shrink: 0;
+}
+
+.highlight {
+  color: #fa5151;
+}
+
+.tag {
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.tag-text {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  line-height: 17px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ended-time {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+/* 提示卡片 */
+.info-card {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  width: 100%;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, rgba(10, 184, 166, 0.03) 0%, rgba(10, 184, 166, 0.03) 100%),
+              linear-gradient(172.81deg, rgba(10, 184, 166, 0.05) 13.757%, rgba(10, 184, 166, 0.1) 89.132%),
+              linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%),
+              linear-gradient(119.84deg, rgba(255, 255, 255, 0.45) 1.6969%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.info-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 12px;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 20px;
+  font-size: 14px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.info-main {
+  color: rgba(0, 0, 0, 0.9);
+  flex-shrink: 0;
+}
+
+.info-link {
+  color: #576b95;
+  flex-shrink: 0;
+}
+
+/* 日常任务区域 */
+.daily-tasks-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  white-space: pre-wrap;
+  flex-shrink: 0;
+}
+
+.tasks-list {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 20px 0 12px 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* 任务项 */
+.task-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.task-icon {
+  background: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  border-radius: 5.647px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.icon-bg {
+  position: absolute;
+  left: 12.71px;
+  width: 56.471px;
+  height: 56.471px;
+  top: 19.77px;
+}
+
+.icon-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.icon-main {
+  position: absolute;
+  left: 7.06px;
+  width: 33.882px;
+  height: 33.882px;
+  top: 7.06px;
+  overflow: hidden;
+}
+
+.icon-main.video,
+.icon-main.refund {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-inner {
+  position: absolute;
+  inset: 6.71% 12.42% 10.83% 12.5%;
+}
+
+.icon-main.shopping-bag .icon-inner,
+.icon-main.video .icon-inner {
+  inset: 8.33% 16.67%;
+}
+
+.icon-main.refund .icon-inner {
+  inset: 8.333%;
+}
+
+.icon-main.live .icon-inner {
+  inset: 8.333%;
+}
+
+.icon-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.task-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 20px;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.task-title {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+  flex-shrink: 0;
+}
+
+.task-desc {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.task-action {
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 14px;
+  color: #576b95;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.task-action:hover {
+  opacity: 0.8;
+}
+
